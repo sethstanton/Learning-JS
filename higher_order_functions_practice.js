@@ -34,6 +34,7 @@ const numbers = [1, 2, 3, 4, 5];
 const total = numbers.reduce((sum, num) =>{
     return sum + num;
 }, 0);
+console.log("Total: ",total);
 
 const levels = [12, 5, 8, 15, 3];
 
@@ -69,3 +70,38 @@ const playerCount = playerList.reduce((list, player)=>{
 },{});
 
 console.log(playerCount);
+
+const team = [
+  { name: "Lira", health: 90 },
+  { name: "Toru", health: 70 },
+  { name: "Garen", health: 100 },
+  { name: "Nima", health: 65 }
+];
+
+const totalTeamHealth = team.reduce((healthTotal, currentPlayer)=>{
+    
+    return healthTotal + currentPlayer.health;
+
+}, 0);
+console.log("Total Health:", totalTeamHealth)
+
+
+const playerStats = [
+  { name: "Lira", role: "Mage", health: 90 },
+  { name: "Toru", role: "Rogue", health: 70 },
+  { name: "Garen", role: "Warrior", health: 100 },
+  { name: "Nima", role: "Healer", health: 65 },
+  { name: "Cassia", role: "Healer", health: 75 },
+  { name: "Fenn", role: "Rogue", health: 80 }
+];
+
+const stats = playerStats.reduce((acc, player)=>{
+
+    acc.totalHealth += player.health;
+    const role = player.role;
+    acc.roleCount[role] = (acc.roleCount[role] || 0)+ 1;
+    
+    return acc;
+},{totalHealth: 0, roleCount:{}});
+
+console.log(stats)
