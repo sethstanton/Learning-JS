@@ -1,0 +1,15 @@
+let string= "aabbbcddd";
+const counts = {};
+let firstNoneRepeatingChar = "";
+
+for( char of string){
+    counts[char]= (counts[char] || 0 ) + 1;
+}
+
+for (let char of string){
+    if(counts[char] === 1){
+        firstNoneRepeatingChar = char;
+        break;
+    }
+}
+console.log(firstNoneRepeatingChar);
