@@ -1,18 +1,18 @@
 let array = [5,3,15,2,4];
 
-function FizzBuzz(first){
+function FizzBuzz(array){
     
-    for(let i = 0; i <= array.length; i ++){
-        if(first = (array[i] % 3 === 0 && array[i] % 5 === 0)){
+    for(let i = 0; i < array.length; i ++){
+        if(array[i] % 3 === 0 && array[i] % 5 === 0){
             console.log("FizzBuzz");
 
-        } else if(first = array[i] % 3 === 0 ){
+        } else if( array[i] % 3 === 0 ){
             console.log("Fizz");
             
-        }else if(first = array[i] % 5 === 0){
+        }else if( array[i] % 5 === 0){
             console.log("Buzz");
         } else{
-            console.log(i);
+            console.log(i + "." , array[i]);
         }
     }
 }
